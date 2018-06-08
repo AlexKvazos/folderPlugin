@@ -93,6 +93,7 @@
             padding-top: 0px;
         }
     </style>
+    <style id="customStyle"></style>
 </head>
 <body id="light-folder-body">
 <div id="carousel" class="sliderCarousel hide">
@@ -113,7 +114,7 @@
                 item.classList.remove("lazy-img");
                 _initImg(item);
             }
-            
+
             function _initImg(item) {
                 img.src = item.getAttribute('data-src');
                 img.className = 'reveal-img';
@@ -214,6 +215,9 @@
         } else {
             txt.classList.remove('hide');
         }
+
+        var style = document.getElementById('customStyle');
+        style.innerHTML = '.media-holder-text span { font-size: '+obj.data.design.fontSize +'rem !important; }';
 
 
         var pluginsContainer = document.getElementById("pluginsContainer");
@@ -503,7 +507,7 @@
     buildfire.datastore.onUpdate(function (obj) {
         loadData(null, obj)
     });
-    
+
     buildfire.messaging.onReceivedMessage = function (event) {
         if (event) {
             var plugin = event.message.data;

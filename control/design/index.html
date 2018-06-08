@@ -88,6 +88,19 @@
                     <p class="info margin-top-fifteen">Note: This will allow you to hide the text on specific layouts.</p>
                 </div>
             </div>
+            <hr>
+            <div class="item row clearfix">
+                <div class="labels col-md-3 padding-right-zero pull-left">
+                    <span>Font size</span>
+                </div>
+                <div class="main col-md-9 pull-right">
+                    <p>{{ data.design.fontSize }}rem</p>
+                    <input
+                        ng-change="changeFontSize()"
+                        ng-model="data.design.fontSize"
+                        default="1" step="0.1" type="range" min="0.5" max="2.5"/>
+                </div>
+            </div>
         </div>
 
 
